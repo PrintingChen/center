@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>容器水平垂直居中</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		/*方法一：position加margin*/
+		.out{
+			width: 300px;
+			height: 300px;
+			background: #ccc;
+			position: relative;
+		}
+		.out .inner{
+			width: 150px;
+			height: 150px;
+			background: #f00;
+			position: absolute;
+			/*top: 50%;
+			left: 50%;
+			margin-left: -75px;
+			margin-top: -75px;*/
+
+			margin: auto;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			*position: absolute;
+			*top: 50%;
+			*left: 50%;
+			*margin-left: -75px;
+			*margin-top: -75px;
+		}
+
+		/*方法二： diaplay:table-cell，设置了display:table-cell的元素对宽度高度敏感，对margin值无反，响应padding属性
+		*/
+		/*.out{
+			width: 300px;
+			height: 300px;
+			background: #ccc;
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+		}
+		.out .inner{
+			width: 150px;
+			height: 150px;
+			background: #f00;
+			display: inline-block;
+			vertical-align: middle;
+		}*/
+
+		/*方法三：position加 transform ie9以下不支持 transform，手机端表现的比较好*/
+		/*.out{
+			width: 300px;
+			height: 300px;
+			background: #ccc;
+			position: relative;
+		}
+		.out .inner{
+			width: 150px;
+			height: 150px;
+			background: #f00;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}*/
+
+		/*方法四：flex;align-items: center;justify-content: center*/
+		/*.out{
+			width: 300px;
+			height: 300px;
+			background: #ccc;
+			display: flex;*/ /*只有谷歌和火狐支持*/
+			/*align-items: center;
+			justify-content: center;*/ /*space-around*/
+		/*}
+		.out .inner{
+			width: 150px;
+			height: 150px;
+			background: #f00;
+		}*/
+
+		/*方法五：display:flex;margin:auto   移动端首选*/
+		/*.out{
+			width: 300px;
+			height: 300px;
+			background: #ccc;
+			display: flex;
+		}
+		.out .inner{
+			width: 150px;
+			height: 150px;
+			background: #f00;
+			margin: auto;
+		}*/
+
+		/*方法六：纯position IE7+ 支持*/
+		/*.out{
+			width: 300px;
+			height: 300px;
+			background: #ccc;
+			position: relative;
+		}
+		.out .inner{
+			width: 150px;
+			height: 150px;
+			background: #f00;
+			position: absolute;
+			left: 75px;
+			top: 75px;
+		}*/
+	</style>
+</head>
+<body>
+	<div class="out">
+		<div class="inner"></div>
+	</div>
+</body>
+</html>
